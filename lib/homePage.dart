@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testing_provider_project/breadCrumbProvider.dart';
+import 'package:testing_provider_project/breadCrumbWidget.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key}); 
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,13 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
+          Consumer<BreadCrumbProvider>(
+            builder: (context, value, child) {
+              return BreadCrumbWidget(
+                breadCrumb: value.items,
+              );
+            },
+          ),
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Center(
@@ -27,7 +35,7 @@ class HomePage extends StatelessWidget {
                 child: const Text('Add new bread crumb !!'),
               ),
             ),
-          ),  
+          ),
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Center(

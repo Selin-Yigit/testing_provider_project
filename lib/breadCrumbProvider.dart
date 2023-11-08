@@ -8,7 +8,7 @@ class BreadCrumbProvider extends ChangeNotifier {
   final List<BreadCrumb> _items = [];
 
   //BreadCrumb'ların tutulduğu READONLY liste.
-  UnmodifiableListView<BreadCrumb> get item => UnmodifiableListView(_items);
+  UnmodifiableListView<BreadCrumb> get items => UnmodifiableListView(_items);
 
   void Add(BreadCrumb breadCrumb) {
     for (final item in _items) {
