@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           "/": (BuildContext context) => const HomePage(),
+          "/add": (BuildContext context) => HomePage(),
         },
         initialRoute: "/",
       ),
