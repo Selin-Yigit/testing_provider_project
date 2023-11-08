@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:testing_provider_project/breadCrumbProvider.dart';
 import 'package:testing_provider_project/homePage.dart';
 
 void main() {
@@ -11,12 +13,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        "/": (BuildContext context) => const HomePage(),
-      },
-      initialRoute: "/",
+    return ChangeNotifierProvider(
+      // Bu şekilde provider'ı context'e getirmiş olduk.
+      // Bu sayede "ChangeNotifierProvider" 'ın child'ları provider'a ulaşabilmiş oldu.
+      create: (_) => BreadCrumbProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          "/": (BuildContext context) => const HomePage(),
+        },
+        initialRoute: "/",
+      ),
     );
   }
 }
