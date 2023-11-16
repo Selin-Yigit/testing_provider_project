@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testing_provider_project/breadCrumbProvider.dart';
 import 'package:testing_provider_project/homePage.dart';
+import 'package:testing_provider_project/newBreadCrumbWidget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           "/": (BuildContext context) => const HomePage(),
-          "/add": (BuildContext context) => HomePage(),
+          "/add": (BuildContext context) => const NewBreadCrumbWidget(),
         },
         initialRoute: "/",
       ),
